@@ -55,20 +55,32 @@ class Truck extends Vehicle {
     }
   }
 
-  // TODO: Implement the tow method from the AbleToTow interface
+  // DONE: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
-    // TODO: Get the make an model of the vehicle if it exists
-
-    // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
-    // TODO: If it is, log that the vehicle is being towed
-    // TODO: If it is not, log that the vehicle is too heavy to be towed
+    // DONE: Get the make an model of the vehicle if it exists
+    let make = vehicle.make;
+    let model = vehicle.model;
+    // DONE: Check if the vehicle's weight is less than or equal to the truck's towing capacity
+    if (vehicle.weight <= this.towingCapacity) {
+      // DONE: If it is, log that the vehicle is being towed
+      console.log(`${make} ${model} is being towed.`)
+      // DONE: If it is not, log that the vehicle is too heavy to be towed
+    } else {
+      console.log(`${make} ${model} is too heavy to tow.`)
+    }
   }
 
-  // TODO: Override the printDetails method from the Vehicle class
-  // TODO: The method should call the printDetails method of the parent class
-  // TODO: The method should log the details of the Truck
-  // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
-}
+  // DONE: Override the printDetails method from the Vehicle class
+  override printDetails(): void {
+
+    // DONE: The method should call the printDetails method of the parent class
+    super.printDetails();
+    // DONE: The method should log the details of the Truck
+    // DONE: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
+
+    console.log(`VIN: ${this.vin}, Color: ${this.color}, Make: ${this.make}, Model: ${this.model}, Year: ${this.year}, Weight: ${this.weight}, Top Speed: ${this.topSpeed}, Towing Capacity: ${this.towingCapacity}, Wheels: ${this.wheels}`);
+  }
+};
 
 // Export the Truck class as the default export
 export default Truck;
