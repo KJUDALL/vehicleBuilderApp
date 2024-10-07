@@ -8,7 +8,7 @@ import { StringLiteral } from 'typescript';
 import { timeLog } from 'console';
 
 // DONE: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
-class Truck extends Vehicle {
+class Truck extends Vehicle implements AbleToTow {
   // DONE: Declare properties of the Truck class
   // DONE: The properties should include vin, color, make, model, year, weight, top speed, wheels, and towing capacity
   vin: string;
