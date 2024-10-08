@@ -1,7 +1,7 @@
 
   # Vehicle Builder
   ## Description 
-    Have you ever wanted to build and use cars in the terminal? Well then this command-line app is just for you! By running npm in the terminal, a user will be able to edit prompt messages and account for vehicles of all types, including bikes and trucks. The goal is to provide an all-inclusive command-line solution for vehicle owners globally. 
+  Have you ever wanted to build and use cars in the terminal? Well then this command-line app is just for you! By running npm in the terminal, a user will be able to edit prompt messages and account for vehicles of all types, including bikes and trucks. The goal is to provide an all-inclusive command-line solution for vehicle owners globally. 
   ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
