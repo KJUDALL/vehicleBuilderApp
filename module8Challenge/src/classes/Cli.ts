@@ -409,11 +409,11 @@ class Cli {
           if (this.selectedVehicleVin === truck.vin) {
             // DONE: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
             console.log(`${truck.make} ${truck.model} cannot tow itself.`);
-            truck.performActions(this.chooseVehicle);
+            this.performActions();
             // DONE: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
           } else {
-            truck.tow(this.selectedVehicleVin);
-            truck.performActions(this.chooseVehicle);
+            truck.tow(answers.vehicle);
+            this.performActions();
           }
         }
       });
