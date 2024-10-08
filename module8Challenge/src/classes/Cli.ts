@@ -165,10 +165,7 @@ class Cli {
           let truck: (Truck | undefined);
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
-              truck = this.vehicles[i]
-              // this.findVehicleToTow(this.vehicles[i]).then(() => {
-              //   return;
-              // });
+              truck = this.vehicles[i] as Truck;
             }
           }
         }
@@ -176,7 +173,7 @@ class Cli {
         else if (answers.action === 'Wheelie') {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
-              this.vehicles[i].performWheelie();
+              (this.vehicles[i] as Motorbike).performWheelie();
             }
           }
         }
@@ -408,14 +405,16 @@ class Cli {
       ])
       .then((answers) => {
         // DONE: check if the selected vehicle is the truck
-        if (this.selectedVehicleVin === truck.vin) {
-          // DONE: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
-          console.log(`${truck.make} ${truck.model} cannot tow itself.`);
-          truck.performActions(this.chooseVehicle);
-          // DONE: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
-        } else {
-          tow.selectedVehicleVin
-          Truck.performActions(this.chooseVehicle);
+        if (truck instanceof Truck) {
+          if (this.selectedVehicleVin === truck.vin) {
+            // DONE: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
+            console.log(`${truck.make} ${truck.model} cannot tow itself.`);
+            truck.performActions(this.chooseVehicle);
+            // DONE: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+          } else {
+            truck.tow(this.selectedVehicleVin);
+            truck.performActions(this.chooseVehicle);
+          }
         }
       });
   }
