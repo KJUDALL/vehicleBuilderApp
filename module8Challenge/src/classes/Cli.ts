@@ -166,6 +166,8 @@ class Cli {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
               truck = this.vehicles[i] as Truck;
+            } else {
+              console.log('This vehicle cannot tow. Please try another action.')
             }
           }
         }
@@ -174,6 +176,8 @@ class Cli {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
               (this.vehicles[i] as Motorbike).performWheelie();
+            } else {
+              console.log('This vehicle cannot perform a wheelie. Please try another action.')
             }
           }
         }
@@ -298,7 +302,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          answers.wheels,
+          [],
           parseInt(answers.towingCapacity),
         );
         // DONE: push the truck to the vehicles array
@@ -375,7 +379,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          answers.wheels
+          []
         );
         // DONE: push the motorbike to the vehicles array
         this.vehicles.push(motorbike);
