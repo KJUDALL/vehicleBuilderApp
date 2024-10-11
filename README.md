@@ -13,7 +13,7 @@
   Users can clone this code repo using an IDE of choice. They must ensure inquirer is being imported, and install npm as a package manager. Because this code base uses TypeScript, users must utilize ts commands in the terminal, such as 'npm run build' and 'npm run start.' So long as you are in the correct file, the terminal should populate prompt messages regarding vehicles that you can respond to.
   ## Usage
   You will clone this repo, install npm as a package manager, confirm you're in the correct file, and run npm in the terminal for all the prompt messages to appear. You can add your responses directly in the terminal, allowing you to exit at any point. Watch the video below for additional information and a step-by-step guide.
-  [Watch the video](https://drive.google.com/file/d/15QSQHfYBdadhUg_atMDBuBY0th-pgCee/view?usp=sharing)
+  [Watch the video](https://drive.google.com/file/d/1yqrcRGd8zDhN-1FdVrHkN1gUGxNZHWbR/view)
   ## License
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     
