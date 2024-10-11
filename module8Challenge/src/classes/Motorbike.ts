@@ -38,10 +38,9 @@ class Motorbike extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
-    this.wheels = wheels;
 
     // DONE: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
-    if (wheels.length !== 4) {
+    if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel()];
     } else {
       this.wheels = wheels;
@@ -61,7 +60,16 @@ class Motorbike extends Vehicle {
     // DONE: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
     super.printDetails();
 
-    console.log(`VIN: ${this.vin}, Color: ${this.color}, Make: ${this.make}, Model: ${this.model}, Year: ${this.year}, Weight: ${this.weight}, Top Speed: ${this.topSpeed}, Wheels: ${this.wheels}`);
+    console.log(`
+    VIN: ${this.vin}, 
+    Color: ${this.color}, 
+    Make: ${this.make}, 
+    Model: ${this.model}, 
+    Year: ${this.year}, 
+    Weight: ${this.weight}, 
+    Top Speed: ${this.topSpeed}, 
+    Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire, 
+    Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`);
   }
 };
 

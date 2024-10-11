@@ -45,7 +45,6 @@ class Truck extends Vehicle implements AbleToTow {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
-    this.wheels = wheels;
     this.towingCapacity = towingCapacity;
     // DONE: The constructor should check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
     if (wheels.length !== 4) {
@@ -78,7 +77,18 @@ class Truck extends Vehicle implements AbleToTow {
     // DONE: The method should log the details of the Truck
     // DONE: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
 
-    console.log(`VIN: ${this.vin}, Color: ${this.color}, Make: ${this.make}, Model: ${this.model}, Year: ${this.year}, Weight: ${this.weight}, Top Speed: ${this.topSpeed}, Towing Capacity: ${this.towingCapacity}, Wheels: ${this.wheels}`);
+    console.log(`VIN: ${this.vin}, 
+    Color: ${this.color}, 
+    Make: ${this.make}, 
+    Model: ${this.model}, 
+    Year: ${this.year}, 
+    Weight: ${this.weight}, 
+    Top Speed: ${this.topSpeed}, 
+    Towing Capacity: ${this.towingCapacity}, 
+    Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire
+    Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire
+    Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire
+    Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`);
   }
 };
 

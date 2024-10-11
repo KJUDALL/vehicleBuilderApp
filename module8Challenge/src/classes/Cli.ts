@@ -162,23 +162,43 @@ class Cli {
           }
           // DONE: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
         } else if (answers.action === 'Tow') {
-          let truck: (Truck | undefined);
+          // declare a variable to store the selected truck
+          let truck: Truck | undefined;
+          // find the selected truck
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
+            // if the selected vehicle is a truck, set the truck variable to the vehicle
+            if (
+              this.vehicles[i].vin === this.selectedVehicleVin &&
+              this.vehicles[i] instanceof Truck
+            ) {
               truck = this.vehicles[i] as Truck;
-            } else {
-              console.log('This vehicle cannot tow. Please try another action.')
             }
+          }
+          // if the selected vehicle is a truck, find a vehicle to tow
+          if (truck) {
+            this.findVehicleToTow(truck);
+            return;
+          } else {
+            console.log('This action is only available for Trucks. Please try another action.');
           }
         }
         // DONE: add statements to perform the wheelie action only if the selected vehicle is a motorbike 
         else if (answers.action === 'Wheelie') {
+          // set variable to store this motorbike
+          let motorbike: Motorbike | undefined;
+          // find the selected motorbike
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
-              (this.vehicles[i] as Motorbike).performWheelie();
-            } else {
-              console.log('This vehicle cannot perform a wheelie. Please try another action.')
+            // if the vehicle is a motorbike, set the motorbike vehicle to the variable
+            if
+              (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
+              motorbike = this.vehicles[i] as Motorbike;
             }
+            // if the selected vehicle is a motorbike, perform a wheelie
+          } if (motorbike) {
+            motorbike.performWheelie();
+            return;
+          } else {
+            console.log('This action is only available for Motorbikes. Please try another action.')
           }
         }
 
