@@ -4,6 +4,7 @@ import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
 import Wheel from "./Wheel.js";
+import Vehicle from "./Vehicle.js";
 
 // define the Cli class
 class Cli {
@@ -429,16 +430,23 @@ class Cli {
       ])
       .then((answers) => {
         // DONE: check if the selected vehicle is the truck
-        if (truck instanceof Truck) {
-          if (this.selectedVehicleVin === truck.vin) {
-            // DONE: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
-            console.log(`${truck.make} ${truck.model} cannot tow itself.`);
-            this.performActions();
-            // DONE: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
-          } else {
-            truck.tow(answers.vehicle);
-            this.performActions();
+
+        //set variable to store this truck
+        let selectedTruck: Truck | undefined;
+        for (let i = 0; i < this.vehicles.length; i++) {
+          if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
+            selectedTruck = answers.vehicleToTow;
           }
+        }
+        if (selectedTruck === truck) {
+          // DONE: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
+          console.log(`${truck.make} ${truck.model} cannot tow itself.`);
+          this.performActions();
+          // DONE: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+        } else {
+          truck.tow(answers.vehicleToTow);
+          // this.tow(answers.vehicle);
+          this.performActions();
         }
       });
   }
