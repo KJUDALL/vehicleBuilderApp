@@ -23,5 +23,5 @@
   You can test this app by cloning the repo, installing npm, and running 'npm start' in the terminal. If it's working correctly, you should see the appropriate car prompt messages appear in your terminal for you to answer. If not, feel free to contact me at my email below. 
   ## Questions
     If you would like to contact me, you can do so at the links below. 
-  If any questions come up in the future, you can contact me directly at 4kenzie@gmail.com. If you would like to view this repo, or check out any of my other work, visit my GitHub at [kjudall](https://github.com/kjudall/).
+  If any questions come up in the future, you can contact me directly at myemail@gmail.com. If you would like to view this repo, or check out any of my other work, visit my GitHub at [kjudall](https://github.com/kjudall/).
     
